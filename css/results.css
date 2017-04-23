@@ -1,0 +1,150 @@
+
+
+
+html{
+	width: 100%;
+	height: 100%;
+	margin:0;
+	padding:0;
+}
+
+body{
+	width: 100%;
+	margin:0;
+	padding:0;
+	
+	font-family: Gill Sans, Futura, Tahoma, sans-serif;
+	color: #5B0F18;
+	
+	background-color: #FFB27F;
+	
+}
+
+/*hiding hyperlink properties*/
+a{
+	text-decoration: none;
+	color: inherit;
+}
+
+
+/*banner properties*/
+#banner{
+	width: 100%;
+	height: 120px;
+}
+
+#banner-img{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*header properties*/
+#header{
+	
+	width: 100%;
+	min-width: 400px;
+	height: 30px;
+	margin: auto;
+	margin-top: 20px;
+	
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	
+	z-index: 99;
+
+}
+
+/*properties of the options in the header*/
+#headerul{
+	width: 100%;
+	text-align:center;
+}
+
+.headerli{
+	position: relative;
+	margin: auto;
+	padding: 2% 10% 0% 2%;
+	
+	font-size: 10px;
+	display: inline;
+	color: #BD2031;
+}
+
+/*when you hover your mouse over the options in the header*/
+li:hover{
+	color: #5B0F18;
+}
+
+fieldset{
+	font-size: 12px;
+	margin-left: 10%;
+	margin-right: 10%;
+	
+	padding: 1% 3%;
+	
+	border: 1px solid #666;
+	border-radius: 8px;
+	
+	background-color: #FFBB91;
+}
+
+#patinfo{
+	margin-left: 15%;
+	margin-right: 15%;
+	
+	border-radius: 0px;
+	padding: 2% 5%;
+}
+
+legend{
+	font-size: 21px;
+}
+
+h1{
+	font-size: 21px;
+	margin-left: 10%;
+}
+
+h2{
+	font-size: 18px;
+	margin-left: 10%;
+}
+
+a:hover{
+	color: #C42137;
+}
+
+#print{
+	width: 30%;
+	padding: 1% 10%;
+	
+	margin-top: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	
+	text-align: center;
+	
+	border-radius: 8px;
+	background-color: #FFE97F;
+	color: #3A3000;
+}
+
+#print:hover{
+	background-color: #A5836D;
+}
+
+#return{
+	padding-top: 20px;
+	padding-bottom: 10px;
+	font-size: 10px;
+	text-align: center;
+	color: #BD2031;
+}
+
+#return > a:hover{
+	color: #5B0F18;
+}
+
+
