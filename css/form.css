@@ -82,6 +82,10 @@ form{
 	margin-right: 20%;
 }
 
+.allergies{
+	display:inline-block;
+}
+
 /*when an input box is active*/
 input:focus {
     background-color: #E09770;

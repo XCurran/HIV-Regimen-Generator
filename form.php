@@ -59,6 +59,44 @@
 					<option value="negative">HLAB5071-</option>
 			    </select></span> <br><br>
 				
+				What kind of medications can the patient take: <br>
+				<input type="radio" name="medtype" value="suspension" checked> Suspension only <br>
+				<input type="radio" name="medtype" value="pills"> Swallow Pills <br>
+				<input type="radio" name="medtype" value="crushed"> Crush pills and mix with food <br><br>
+				
+				Allergies: <br>
+				<span class= "allergies">
+					<input type="checkbox" name="allergies" value="med 1"> Abacavir (ABC, Ziagen) <br>
+					<input type="checkbox" name="allergies" value="med 2"> Didanosine (ddl, Videx) <br>
+					<input type="checkbox" name="allergies" value="med 3"> Emtricitabine (FTC, Emtriva) <br>
+					<input type="checkbox" name="allergies" value="med 4"> Lamivudine (3TC, Epivir) <br>
+					<input type="checkbox" name="allergies" value="med 5"> Stavudine (d4T, Zerit) <br>
+					<input type="checkbox" name="allergies" value="med 6"> Tenofovir Alafenamide (TAF) <br>
+					<input type="checkbox" name="allergies" value="med 7"> Tenofovir Disoproxil Fumarate (TDF, Viread) <br>
+					<input type="checkbox" name="allergies" value="med 8"> Zidovudine (ZDV, AZT, Retrovir)<br>
+					<input type="checkbox" name="allergies" value="med 9"> Efavirenz (EFV, Sustiva) <br>
+					<input type="checkbox" name="allergies" value="med 10"> Etravirine (ETR, Intelence, TMC 125) <br>
+					<input type="checkbox" name="allergies" value="med 11"> Nevirapine (NVP, Viramune) <br>
+					<input type="checkbox" name="allergies" value="med 12"> Rilpivirine (RPV, Edurant) <br>
+					<input type="checkbox" name="allergies" value="med 13"> Atazanavir (ATV, Reyataz) <br>
+					<input type="checkbox" name="allergies" value="med 14"> Darunavir (DRV, Prezista) <br>
+				</span>
+				<span class= "allergies">
+					<input type="checkbox" name="allergies" value="med 15"> Fosamprenavir (FPV, Lexiva) <br>
+					<input type="checkbox" name="allergies" value="med 16"> Indinavir (IDV, Crixivan) <br>
+					<input type="checkbox" name="allergies" value="med 17"> Lopinavir/Ritonavir (LPV/r, Kaletra) <br>
+					<input type="checkbox" name="allergies" value="med 18"> Nelfinavir (NFV, Viracept) <br>
+					<input type="checkbox" name="allergies" value="med 19"> Saquinavir (SQV, Invirase) <br>
+					<input type="checkbox" name="allergies" value="med 20"> Tipranavir (TPV, APTIVUS) <br>
+					<input type="checkbox" name="allergies" value="med 21"> Enfuvirtide (T-20, Fuzeon) <br>
+					<input type="checkbox" name="allergies" value="med 22"> Maraviroc (MVC, Selzentry) <br>
+					<input type="checkbox" name="allergies" value="med 23"> Dolutegravir (DTG, Tivicay) <br>
+					<input type="checkbox" name="allergies" value="med 24"> Elvitegravir (EVG, VITEKTA) <br>
+					<input type="checkbox" name="allergies" value="med 25"> Raltegravir (RAL, Isentress) <br>
+					<input type="checkbox" name="allergies" value="med 26"> Cobicistat (COBI, TYBOST)<br>
+					<input type="checkbox" name="allergies" value="med 27"> Ritonavir (RTV, Norvir) <br>
+				</span><br><br>
+
 				
 				<div id="submit-buttons">
 				
