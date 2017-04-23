@@ -27,7 +27,7 @@
 		<div id="header">
 			<ul id="headerul">
 				<!--listing all the options on the header-->
-				<li class="headerli"> <a href="main.html"> Home </a> </li>
+				<li class="headerli"> <a href="index.html"> Home </a> </li>
 				<li class="headerli"> <a href="about.html"> About  </a> </li>
 			</ul>
 		</div>
@@ -217,7 +217,7 @@
 		</a>
 		
 		<div id="return"> 
-			<a href="main.html"> Return to Home </a>
+			<a href="index.html"> Return to Home </a>
 		</div>
 	</body>
 

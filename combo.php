@@ -31,7 +31,7 @@
 		<div id="header">
 			<ul>
 				<!--listing all the options on the header-->
-				<li class="headerli"> <a href="main.html"> Home </a> </li>
+				<li class="headerli"> <a href="index.html"> Home </a> </li>
 				<li class="headerli"> <a href="about.html"> About  </a> </li>
 			
 			</ul>
@@ -79,21 +79,28 @@
 						 result2 is for nrti2
 						 result3 is for the extra arv
 						 result4, result5 and result6 is for the extra arv in an alternative regimen -->
-					<p> <?php 
-						$user = 'root';
-						$pass = '';
-						$pdo = new PDO('mysql:host=localhost;dbname=medications', $user, $pass);//PDO access database
-						$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-						try {
-							$result = $pdo->query('SELECT * FROM `medication_table`');
-							$result2 = $pdo->query('SELECT * FROM `medication_table`');
-							$result3 = $pdo->query('SELECT * FROM `medication_table`');
-							$result4 = $pdo->query('SELECT * FROM `medication_table`');
-							$result5 = $pdo->query('SELECT * FROM `medication_table`');
-							$result6 = $pdo->query('SELECT * FROM `medication_table`');
-						} catch (PDOException $e) {
-							echo $e->getMessage();
-						}
+					<p> <?php
+
+						$dbServerName = "localhost";
+						$dbUsername = "root";
+						$dbPassword = "Pa3Mg5Wj4U@I";
+						$dbName = "medications";
+						$conn = new mysqli($dbServerName, $dbUsername, $dbPassword, $dbName);
+
+						// $user = 'root';
+						// $pass = '';
+						// $pdo = new PDO('mysql:host=localhost;dbname=medications', $user, $pass);//PDO access database
+						// $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+						// try {
+							$result = $conn->query('SELECT * FROM `medication_table`');
+							$result2 = $conn->query('SELECT * FROM `medication_table`');
+							$result3 = $conn->query('SELECT * FROM `medication_table`');
+							$result4 = $conn->query('SELECT * FROM `medication_table`');
+							$result5 = $conn->query('SELECT * FROM `medication_table`');
+							$result6 = $conn->query('SELECT * FROM `medication_table`');
+						// } catch (PDOException $e) {
+						// 	echo $e->getMessage();
+						// }
 						
 						$agey= $_POST['years'];
 						$agem= $_POST['months'];
@@ -367,7 +374,7 @@
 			
 		
 		<div id="return"> 
-			<a href="main.html"> Return to Home </a>
+			<a href="index.html"> Return to Home </a>
 		</div>
 	</body>
 

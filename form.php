@@ -28,7 +28,7 @@
 		<div id="header">
 			<ul>
 				<!--listing all the options on the header-->
-				<li class="headerli"> <a href="main.html"> Home </a> </li>
+				<li class="headerli"> <a href="index.html"> Home </a> </li>
 				<li class="headerli"> <a href="about.html"> About  </a> </li>
 			</ul>
 		</div>
@@ -108,7 +108,7 @@
 		</form>
 		
 		<div id="return"> 
-			<a href="main.html"> Return to Home </a>
+			<a href="index.html"> Return to Home </a>
 		</div>
 		
 		<!-- loading javascript -->
