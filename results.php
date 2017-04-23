@@ -43,10 +43,6 @@
 				echo '<b> Age: </b> ',$_SESSION["years"],'  Years and ',$_SESSION["months"],' Months. <br><br>';
 			}
 			
-			if ($_SESSION['bsa'] != Null) {
-				echo '<b> BSA: </b> ',$_SESSION["bsa"],' <br><br>';
-			}
-			
 			if ($_SESSION['weight'] !=Null) {
 				echo '<b> Weight: </b> ',$_SESSION["weight"],'  kilograms (kg) <br><br>';
 			}
@@ -61,10 +57,6 @@
 			
 			if ($_SESSION['HLA-status'] != 'Null') {
 				echo '<b> HLA status: </b> ',$_SESSION["HLA-status"],' <br><br>';
-			}
-			
-			if ($_SESSION['other-allergies'] != Null) {
-				echo '<b> Additional Notes: </b> </b> ',$_SESSION["other-allergies"],' <br><br>';
 			}
 		?>
 		</fieldset>
