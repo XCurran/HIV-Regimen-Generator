@@ -112,7 +112,7 @@
 							
 							foreach ($result3 as $arv) {
 								if ($arv['Name'] == ('Lopinavir/Ritonavir (LPV/r, Kaletra)')){
-										echo '<span><input type="checkbox" name="extra" value="',$arv['SName'],'" >',$arv['Name'],'';
+										echo '<span><input type="checkbox" id="',$arv['SName'],'" name="extra" value="',$arv['SName'],'" >',$arv['Name'],'';
 										echo'<br>';
 										echo'<br>';
 									}
@@ -128,7 +128,7 @@
 								foreach ($result4 as $arv) {
 									
 									if ($arv['Name'] == ('Nevirapine (NVP, Viramune)')){
-											echo '<span><input type="checkbox" name="extra" value="',$arv['SName'],'" >',$arv['Name'],'';
+											echo '<span><input type="checkbox" id="',$arv['SName'],'" name="extra"  value="',$arv['SName'],'" >',$arv['Name'],'';
 											echo'<br>';
 											echo'<br>';
 										}
@@ -145,7 +145,7 @@
 								foreach ($result5 as $arv) {
 									
 									if ($arv['Name'] == ('Raltegravir (RAL, Isentress)')){
-											echo '<span><input type="checkbox" name="extra" value="',$arv['SName'],'" >',$arv['Name'],'';
+											echo '<span><input type="checkbox" id="',$arv['SName'],'" name="extra" value="',$arv['SName'],'" >',$arv['Name'],'';
 											echo'<br>';
 											echo'<br>';
 										}
@@ -162,7 +162,7 @@
 								foreach ($result6 as $arv) {
 									
 									if ($arv['Name'] == ('Atazanavir (ATV, Reyataz)')){
-											echo '<span><input type="checkbox" name="extra" value="',$arv['SName'],'" >',$arv['Name'],'';
+											echo '<span><input type="checkbox" id="',$arv['SName'],'" name="extra" value="',$arv['SName'],'" >',$arv['Name'],'';
 											echo'<br>';
 											echo'<br>';
 										}
@@ -182,14 +182,14 @@
 							
 								if ($arv['Name'] == ('Lopinavir/Ritonavir (LPV/r, Kaletra)')){
 									
-									echo '<span><input type="checkbox" name="extra" value="',$arv['SName'],'" checked >',$arv['Name'],'';
+									echo '<span><input type="checkbox" id="',$arv['SName'],'" name="extra" value="',$arv['SName'],'" >',$arv['Name'],'';
 									echo'<br>';
 									echo'<br>';
 								}
 								
 								else if ($arv['Name'] == ('Raltegravir (RAL, Isentress)')){
 									
-									echo '<span><input type="checkbox" name="extra" value="',$arv['SName'],'" >',$arv['Name'],'';
+									echo '<span><input type="checkbox" id="',$arv['SName'],'" name="extra" value="',$arv['SName'],'" >',$arv['Name'],'';
 									echo'<br>';
 									echo'<br>';
 								}		
@@ -205,7 +205,7 @@
 								foreach ($result4 as $arv) {
 									
 									if ($arv['Name'] == ('Nevirapine (NVP, Viramune)')){
-											echo '<span><input type="checkbox" name="extra" value="',$arv['SName'],'" >',$arv['Name'],'';
+											echo '<span><input type="checkbox" id="',$arv['SName'],'" name="extra" value="',$arv['SName'],'" >',$arv['Name'],'';
 											echo'<br>';
 											echo'<br>';
 										}
@@ -224,35 +224,35 @@
 								
 								if ($arv['Name'] == ('Lopinavir/Ritonavir (LPV/r, Kaletra)')){
 										
-										echo '<span><input type="checkbox" name="extra" value="',$arv['SName'],'" checked >',$arv['Name'],'';
+										echo '<span><input type="checkbox" id="',$arv['SName'],'" name="extra" value="',$arv['SName'],'" >',$arv['Name'],'';
 										echo'<br>';
 										echo'<br>';
 									}
 									
 								else if ($arv['Name'] == ('Raltegravir (RAL, Isentress)')){
 									
-									echo '<span><input type="checkbox" name="extra" value="',$arv['SName'],'" >',$arv['Name'],'';
+									echo '<span><input type="checkbox" id="',$arv['SName'],'" name="extra" value="',$arv['SName'],'" >',$arv['Name'],'';
 									echo'<br>';
 									echo'<br>';
 								}
 								
 								else if ($arv['Name'] == ('Efavirenz (EFV, Sustiva)')){
 									
-									echo '<span><input type="checkbox" name="extra" value="',$arv['SName'],'" >',$arv['Name'],'';
+									echo '<span><input type="checkbox" id="',$arv['SName'],'" name="extra" value="',$arv['SName'],'" >',$arv['Name'],'';
 									echo'<br>';
 									echo'<br>';
 								}
 								
 								else if ($arv['Name'] == ('Atazanavir (ATV, Reyataz)')){
 									
-									echo '<span><input type="checkbox" name="extra" value="',$arv['SName'],'" >',$arv['Name'],'';
+									echo '<span><input type="checkbox" id="',$arv['SName'],'" name="extra" value="',$arv['SName'],'" >',$arv['Name'],'';
 									echo'<br>';
 									echo'<br>';
 								}
 								
 								else if ($arv['Name'] == ('Darunavir (DRV, Prezista)')){
 									
-									echo '<span><input type="checkbox" name="extra" value="',$arv['SName'],'" >',$arv['Name'],'(twice daily)';
+									echo '<span><input type="checkbox" id="',$arv['SName'],'" name="extra" value="',$arv['SName'],'" >',$arv['Name'],'(twice daily)';
 									echo'<br>';
 									echo'<br>';
 								}
@@ -272,28 +272,28 @@
 								
 								if ($arv['Name'] == ('Dolutegravir (DTG, Tivicay)')){
 										
-										echo '<span><input type="checkbox" name="extra" value="',$arv['SName'],'" checked >',$arv['Name'],'';
+										echo '<span><input type="checkbox" id="',$arv['SName'],'" name="extra" value="',$arv['SName'],'" >',$arv['Name'],'';
 										echo'<br>';
 										echo'<br>';
 									}
 									
 								else if ($arv['Name'] == ('Elvitegravir (EVG, VITEKTA)')){
 									
-									echo '<span><input type="checkbox" name="extra" value="',$arv['SName'],'" >',$arv['Name'],'';
+									echo '<span><input type="checkbox" id="',$arv['SName'],'" name="extra" value="',$arv['SName'],'" >',$arv['Name'],'';
 									echo'<br>';
 									echo'<br>';
 								}
 								
 								else if ($arv['Name'] == ('Darunavir (DRV, Prezista)')){
 									
-									echo '<span><input type="checkbox" name="extra" value="',$arv['SName'],'" >',$arv['Name'],'(once daily)';
+									echo '<span><input type="checkbox" id="',$arv['SName'],'" name="extra" value="',$arv['SName'],'" >',$arv['Name'],'(once daily)';
 									echo'<br>';
 									echo'<br>';
 								}
 								
 								else if ($arv['Name'] == ('Atazanavir (ATV, Reyataz)')){
 									
-									echo '<span><input type="checkbox" name="extra" value="',$arv['SName'],'" >',$arv['Name'],'';
+									echo '<span><input type="checkbox" id="',$arv['SName'],'" name="extra" value="',$arv['SName'],'" >',$arv['Name'],'';
 									echo'<br>';
 									echo'<br>';
 								
