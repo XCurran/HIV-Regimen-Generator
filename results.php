@@ -85,7 +85,7 @@
 					$combo = explode("_", $_POST[$c1]);
 					echo '<br>';
 					echo '<br>';
-					echo '<b>',$combo[0],'   ',$combo[1],'    ',$combo[2],'<b>';
+					echo '<b>',$combo[0],'   ',$combo[1],'    ',$combo[2],'</b>';
 	
 				
 					foreach ($result as $Regimen) {

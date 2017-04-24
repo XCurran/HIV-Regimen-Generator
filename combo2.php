@@ -37,7 +37,7 @@
 			</ul>
 		</div>
 		<p id="disclaimer"> *Disclaimer* None of the following information you provide will be stored. All details inputted will be removed immediately after you close the browser. </p>
-		<form action="results.php" method="post">
+		<form onsubmit="return check2()" action="results.php" method="post">
 		<fieldset>
 				<legend> ALL COMBINATIONS </legend>
 				<div id="combo">
@@ -86,7 +86,7 @@
 						for ($x = 0; $x <= $i; $x++){
 							for ($j = $x+1; $j <= $i; $j++){
 								$c =$c +1;
-								echo '<span><input type="checkbox" name="',$c,'"  value="',$n[$x],'_',$n[$j],'_',$m[$k],'" ><b>',$n[$x],' + ',$n[$j],' + ',$m[$k],'<b>';
+								echo '<span><input type="checkbox" id="',$c,'" name="',$c,'"  value="',$n[$x],'_',$n[$j],'_',$m[$k],'" ><b>',$n[$x],' + ',$n[$j],' + ',$m[$k],'<b>';
 								echo '<br>';
 								echo '<br>';
 								

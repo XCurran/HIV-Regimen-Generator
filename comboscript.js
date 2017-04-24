@@ -106,14 +106,14 @@ function check() {
 			
 			if (ct1 < 2){
 				if (ct2 == 0){
-					alert("Choose two NRTIs and one non-NRTI")
+					alert("Choose at least two NRTIs and one non-NRTI")
 					return false;
 				}
-				alert("Choose two NRTIs and one non-NRTI")
+				alert("Choose at least two NRTIs and one non-NRTI")
 				return false;
 			}
-			
-			
-			
-			
 		}
+
+function check2(){
+	
+}
