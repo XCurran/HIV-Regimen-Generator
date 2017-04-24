@@ -92,12 +92,12 @@
 						// $pdo = new PDO('mysql:host=localhost;dbname=medications', $user, $pass);//PDO access database
 						// $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 						// try {
-							$result = $conn->query('SELECT * FROM `medication_table`');
-							$result2 = $conn->query('SELECT * FROM `medication_table`');
-							$result3 = $conn->query('SELECT * FROM `medication_table`');
-							$result4 = $conn->query('SELECT * FROM `medication_table`');
-							$result5 = $conn->query('SELECT * FROM `medication_table`');
-							$result6 = $conn->query('SELECT * FROM `medication_table`');
+							$result = $conn->query('SELECT * FROM medication_table');
+							$result2 = $conn->query('SELECT * FROM medication_table');
+							$result3 = $conn->query('SELECT * FROM medication_table');
+							$result4 = $conn->query('SELECT * FROM medication_table');
+							$result5 = $conn->query('SELECT * FROM medication_table');
+							$result6 = $conn->query('SELECT * FROM medication_table');
 						// } catch (PDOException $e) {
 						// 	echo $e->getMessage();
 						// }

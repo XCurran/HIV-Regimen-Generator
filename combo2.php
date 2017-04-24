@@ -54,7 +54,7 @@
 					$dbPassword = "";
 					$dbName = "medications";
 					$conn = new mysqli($dbServerName, $dbUsername, $dbPassword, $dbName);
-					$result = $conn->query('SELECT * FROM `medication_table`');
+					$result = $conn->query('SELECT * FROM medication_table');
 
 
 					// $user = 'root';
