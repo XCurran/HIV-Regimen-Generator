@@ -187,7 +187,7 @@
 								}
 							}
 							
-							if (($agey == 0 && $agem >= 3 && $weight >=10) || ($agey<2 && $agey>0 && $weight >=10)){
+							if (($agey == 0 && $agem >= 3 && $weight >=10) || ($agey<3 && $agey>0 && $weight >=10)){
 									
 								if ($arv[$_SESSION['medtype']] != Null){
 									echo'<b>ALTERNATIVE REGIMEN</b>';
@@ -249,6 +249,23 @@
 											}
 									}
 								
+								}
+							}
+							if (($agey == 0 && $agem >= 3 && $weight >=10) || ($agey<3 && $agey>0 && $weight >=10)){
+									
+								if ($arv[$_SESSION['medtype']] != Null){
+									echo'<b>ALTERNATIVE REGIMEN</b>';
+									echo'<br>';
+									echo'<br>';
+									
+									foreach ($result6 as $arv) {
+										
+										if ($arv['CName'] === $_SESSION['a13']){
+												echo '<span><input type="checkbox" id="',$arv['SName'],'" name="',$arv['SName'],'" value="',$arv['SName'],'" >',$arv['Name'],'';
+												echo'<br>';
+												echo'<br>';
+											}
+										}
 								}
 							}
 						}
