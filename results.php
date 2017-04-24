@@ -67,22 +67,12 @@
 		
 		<h1> Patient's Selected Regimen: </h1>
 		<?php 
-
 		$dbServerName = "localhost";
 		$dbUsername = "root";
 		$dbPassword = "Pa3Mg5Wj4U@I";
 		$dbName = "medications";
 		$conn = new mysqli($dbServerName, $dbUsername, $dbPassword, $dbName);
 		$result = $conn->query('SELECT * FROM `medication_table`');
-		// $user = 'root';
-		// $pass = '';
-		// $pdo = new PDO('mysql:host=localhost;dbname=medications', $user, $pass);//PDO access database
-		// $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		// try{
-		// 	$result = $pdo->query('SELECT * FROM `medication_table`');
-		// } catch (PDOException $e) {
-		// 		echo $e->getMessage();
-		// } 
 
 			?>		
 		
