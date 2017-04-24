@@ -39,6 +39,7 @@
 			<legend> Patient Information </legend>
 			<?php
 			session_start();
+
 			if ($_SESSION["years"] != Null && $_SESSION["months"] != Null) {
 				echo '<b> Age: </b> ',$_SESSION["years"],'  Years and ',$_SESSION["months"],' Months. <br><br>';
 			}
@@ -84,120 +85,126 @@
 	
 		<?php
 			
-			
-			
-			foreach ($result as $Regimen) {
+			for ($c1 = 0; $c1 <= $_SESSION['c']; $c1++){
+				if (isset($_POST[$c1]) == true){
+					echo $_POST[$c1];
+	
+					$combo = explode("_", $_POST[$c1]);
 				
-				if ($_POST['nrti1'] == $Regimen['SName'] || $_POST['nrti2'] == $Regimen['SName'] || $_POST['extra'] == $Regimen['SName']) {
-					
-					echo ('<h2>');
-					echo $Regimen['Type'];
-					echo ('</h2>');
-					echo ('<fieldset id="pillone">');
-					echo ('<legend>');
-					echo $Regimen['Name'];
-					echo ('</legend>');
-					
-					if ($Regimen['Formulations']!= Null){
-						echo ('<br />');
-						echo '<b>Formulations</b>';
-						echo '<br >'; 
-						echo '<br >'; 
-						echo $Regimen['Formulations'];
-						}
+					foreach ($result as $Regimen) {
 						
-					if ($Regimen['Fixed Dose Combination Tablets']!= Null){
-						echo '<br >'; 
-						echo '<br >';
-						echo '<br >'; 
-						echo '<br >';
-						echo '<b>Fixed Dose Combination Tablets</b>';
-						echo '<br >'; 
-						echo '<br >'; 
-						echo $Regimen['Fixed Dose Combination Tablets'];
-						}
-						
-					if ($Regimen['Treatment of HIV Infection']!= Null){
-						echo '<br >'; 
-						echo '<br >';
-						echo '<br >'; 
-						echo '<br >';
-						echo '<b>Treatment of HIV Infection</b>';
-						echo '<br >'; 
-						echo '<br >'; 
-						echo $Regimen['Treatment of HIV Infection'];
-						}
-						
-					if ($_SESSION['years'] >= 0.5 and $_SESSION['months'] < 3 and $_SESSION['years'] == 0){
-						echo '<br >'; 
-						echo '<br >';
-						echo '<br >'; 
-						echo '<br >';
-						echo '<b>Neonate (birth to <3 months)</b>';
-						echo '<br >'; 
-						echo '<br >'; 
-						echo $Regimen['Neonate (birth to <3 months)'];
-						}
-						
-					if ($_SESSION['months'] >= 3 and $_SESSION['months'] < 8 and $_SESSION['years'] == 0){
-						echo '<br >'; 
-						echo '<br >';
-						echo '<br >'; 
-						echo '<br >';
-						echo '<b>Infant (3 months to 8 months)</b>';
-						echo '<br >'; 
-						echo '<br >'; 
-						echo $Regimen['Infant (3 months to 8 months)'];
-						}
-						
-					if ( ($_SESSION['years'] == 0 and $_SESSION['months'] >= 8)	or ($_SESSION['years'] < 6 and $_SESSION['years'] > 0)){
-						echo '<br >'; 
-						echo '<br >';
-						echo '<br >'; 
-						echo '<br >';
-						echo '<b>Pediatric (8 months to 6 years old)</b>';
-						echo '<br >'; 
-						echo '<br >'; 
-						echo $Regimen['Pediatric (8 months to 6 years old)'];
-						}
-						
-					if ($_SESSION['years'] >= 6 and $_SESSION['years'] < 18){
-						echo '<br >'; 
-						echo '<br >';
-						echo '<br >'; 
-						echo '<br >';
-						echo '<b>Adolescent (6 years old - 17 years old)</b>';
-						echo '<br >'; 
-						echo '<br >'; 
-						echo $Regimen['Adolescent (6 years old - 17 years old)'];
-						}
-					
-					if ($_SESSION['years'] >= 18){
-						echo '<br >'; 
-						echo '<br >';
-						echo '<br >'; 
-						echo '<br >';
-						echo '<b>Adult (18 years old+)</b>';
-						echo '<br >'; 
-						echo '<br >'; 
-						echo $Regimen['Adult (18 years old+)'];
-						}
-						
-					if ($Regimen['Special Instructions']!= Null){
-						echo '<br >'; 
-						echo '<br >';
-						echo '<br >'; 
-						echo '<br >';
-						echo '<b>Special Instructions</b>';
-						echo '<br >'; 
-						echo '<br >'; 
-						echo $Regimen['Special Instructions'];
-						}
-					
-					echo ('</legend>');
-					echo ('<br />');
-					echo ('</fieldset>');
+						if ($Regimen['SName'] == $combo[0] || $Regimen['SName'] == $combo[1] || $Regimen['SName'] == $combo[2]) {
+							
+							echo ('<h2>');
+							echo $Regimen['Type'];
+							echo ('</h2>');
+							echo ('<fieldset id="pillone">');
+							echo ('<legend>');
+							echo $Regimen['Name'];
+							echo ('</legend>');
+							
+							if ($Regimen['Formulations']!= Null){
+								echo ('<br />');
+								echo '<b>Formulations</b>';
+								echo '<br >'; 
+								echo '<br >'; 
+								echo $Regimen['Formulations'];
+								}
+								
+							if ($Regimen['Fixed Dose Combination Tablets']!= Null){
+								echo '<br >'; 
+								echo '<br >';
+								echo '<br >'; 
+								echo '<br >';
+								echo '<b>Fixed Dose Combination Tablets</b>';
+								echo '<br >'; 
+								echo '<br >'; 
+								echo $Regimen['Fixed Dose Combination Tablets'];
+								}
+								
+							if ($Regimen['Treatment of HIV Infection']!= Null){
+								echo '<br >'; 
+								echo '<br >';
+								echo '<br >'; 
+								echo '<br >';
+								echo '<b>Treatment of HIV Infection</b>';
+								echo '<br >'; 
+								echo '<br >'; 
+								echo $Regimen['Treatment of HIV Infection'];
+								}
+								
+							if ($_SESSION['years'] >= 0.5 and $_SESSION['months'] < 3 and $_SESSION['years'] == 0){
+								echo '<br >'; 
+								echo '<br >';
+								echo '<br >'; 
+								echo '<br >';
+								echo '<b>Neonate (birth to <3 months)</b>';
+								echo '<br >'; 
+								echo '<br >'; 
+								echo $Regimen['Neonate (birth to <3 months)'];
+								}
+								
+							if ($_SESSION['months'] >= 3 and $_SESSION['months'] < 8 and $_SESSION['years'] == 0){
+								echo '<br >'; 
+								echo '<br >';
+								echo '<br >'; 
+								echo '<br >';
+								echo '<b>Infant (3 months to 8 months)</b>';
+								echo '<br >'; 
+								echo '<br >'; 
+								echo $Regimen['Infant (3 months to 8 months)'];
+								}
+								
+							if ( ($_SESSION['years'] == 0 and $_SESSION['months'] >= 8)	or ($_SESSION['years'] < 6 and $_SESSION['years'] > 0)){
+								echo '<br >'; 
+								echo '<br >';
+								echo '<br >'; 
+								echo '<br >';
+								echo '<b>Pediatric (8 months to 6 years old)</b>';
+								echo '<br >'; 
+								echo '<br >'; 
+								echo $Regimen['Pediatric (8 months to 6 years old)'];
+								}
+								
+							if ($_SESSION['years'] >= 6 and $_SESSION['years'] < 18){
+								echo '<br >'; 
+								echo '<br >';
+								echo '<br >'; 
+								echo '<br >';
+								echo '<b>Adolescent (6 years old - 17 years old)</b>';
+								echo '<br >'; 
+								echo '<br >'; 
+								echo $Regimen['Adolescent (6 years old - 17 years old)'];
+								}
+							
+							if ($_SESSION['years'] >= 18){
+								echo '<br >'; 
+								echo '<br >';
+								echo '<br >'; 
+								echo '<br >';
+								echo '<b>Adult (18 years old+)</b>';
+								echo '<br >'; 
+								echo '<br >'; 
+								echo $Regimen['Adult (18 years old+)'];
+								}
+								
+							if ($Regimen['Special Instructions']!= Null){
+								echo '<br >'; 
+								echo '<br >';
+								echo '<br >'; 
+								echo '<br >';
+								echo '<b>Special Instructions</b>';
+								echo '<br >'; 
+								echo '<br >'; 
+								echo $Regimen['Special Instructions'];
+								}
+							
+							echo ('</legend>');
+							echo ('<br />');
+							echo ('</fieldset>');
+							}
 					}
+				}
 			}				
 			?>
 		

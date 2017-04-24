@@ -37,14 +37,17 @@
 			</ul>
 		</div>
 		<p id="disclaimer"> *Disclaimer* None of the following information you provide will be stored. All details inputted will be removed immediately after you close the browser. </p>
-		<form onsubmit="return check2()" action="results.php" method="post">
+		<form action="results.php" method="post">
 		<fieldset>
 				<legend> ALL COMBINATIONS </legend>
 				<div id="combo">
 				
 				<?php
 					session_start();
-					
+					$i = -1;
+					$l = -1;
+					$n = array();
+					$m = array();
 					$user = 'root';
 						$pass = '';
 						$pdo = new PDO('mysql:host=localhost;dbname=medications', $user, $pass);//PDO access database
@@ -57,16 +60,39 @@
 					
 					foreach ($result as $arv){
 						
+						
 						if (isset($_POST[$arv['SName']]) == true){
-							if ($_POST[$arv['SName']] == $arv['SName']){
-								echo $arv['SName'];
-								echo '<br>';
+							if ($arv['Type'] == 'NRTI' or $arv['Type'] == 'NRTI (rare)'){
+								$i = $i+1;
+								array_push($n,$arv['SName']);
+							}
+							else{
+								$l = $l+1;
+								array_push($m,$arv['SName']);
 							}
 						}
 					}
+					$c = -1;
+					for ($k = 0; $k <= $l; $k++){
+						for ($x = 0; $x <= $i; $x++){
+							for ($j = $x+1; $j <= $i; $j++){
+								$c =$c +1;
+								echo '<span><input type="checkbox" name="',$c,'"  value="',$n[$x],'_',$n[$j],'_',$m[$k],'" ><b>',$n[$x],' + ',$n[$j],' + ',$m[$k],'<b>';
+								echo '<br>';
+								echo '<br>';
+								
+
+							}
+						}
+						echo '<br>';
+						echo '<br>';
+						echo '<br>';
+						echo '<br>';
+					}
 					
 					
-				
+					$_SESSION['c'] = $c;
+					
 				
 				?>
 				
