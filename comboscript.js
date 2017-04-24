@@ -40,23 +40,35 @@ function check() {
 			var ct1 = 0;
 			var ct2 = 0;
 			
-			if (v1.checked == true){
-				var c1 = 1;
+			if (v1 != null){
+				if (v1.checked == true){
+					var c1 = 1;
+				}
 			}
-			if (v2.checked == true){
-				var c2 = 1;
+			if (v2 != null){
+				if (v2.checked == true){
+					var c2 = 1;
+				}
 			}
-			if (v3.checked == true){
-				var c3 = 1;
+			if (v3 != null){
+				if (v3.checked == true){
+					var c3 = 1;
+				}
 			}
-			if (v4.checked == true){
-				var c4 = 1;
+			if (v4 != null){
+				if (v4.checked == true){
+					var c4 = 1;
+				}
 			}
-			if (v5.checked == true){
-				var c5 = 1;
+			if (v5 != null){
+				if (v5.checked == true){
+					var c5 = 1;
+				}
 			}
-			if (v6.checked == true){
-				var c6 = 1;
+			if (v6 != null){
+				if (v6.checked == true){
+					var c6 = 1;
+				}
 			}
 			if (v7 != null){
 				if (v7.checked == true){
