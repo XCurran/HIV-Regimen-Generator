@@ -60,8 +60,8 @@
 			    </select></span> <br><br>
 				
 				What kind of medications can the patient take: <br>
-				<input type="radio" name="medtype" value="suspension" checked> Suspension only <br>
-				<input type="radio" name="medtype" value="pills"> Swallow Pills <br>
+				<input type="radio" name="medtype" value="Formulations (Suspension)" checked> Suspension only <br>
+				<input type="radio" name="medtype" value="Formulations (Tablet)"> Swallow Pills <br>
 				<input type="radio" name="medtype" value="crushed"> Crush pills and mix with food <br><br>
 				
 				Allergies: <br>
@@ -74,7 +74,7 @@
 					<input type="checkbox" name="a6" value="Alafenamide"> Tenofovir Alafenamide (TAF) <br>
 					<input type="checkbox" name="a7" value="Disoproxil"> Tenofovir Disoproxil Fumarate (TDF, Viread) <br>
 					<input type="checkbox" name="a8" value="Zidovudine"> Zidovudine (ZDV, AZT, Retrovir)<br>
-					<input type="checkbox" name="a9" value="Efavirenz"> Efavirenz (EFV, Sustiva) <br>
+					<input type="checkbox" name="a9" value="Dolutegravir"> Dolutegravir (DTG, Tivicay) <br>
 					<input type="checkbox" name="a10" value="Etravirine"> Etravirine (ETR, Intelence, TMC 125) <br>
 					<input type="checkbox" name="a11" value="Nevirapine"> Nevirapine (NVP, Viramune) <br>
 					<input type="checkbox" name="a12" value="Rilpivirine"> Rilpivirine (RPV, Edurant) <br>
@@ -90,8 +90,8 @@
 					<input type="checkbox" name="a20" value="Tipranavir"> Tipranavir (TPV, APTIVUS) <br>
 					<input type="checkbox" name="a21" value="Enfuvirtide"> Enfuvirtide (T-20, Fuzeon) <br>
 					<input type="checkbox" name="a22" value="Maraviroc"> Maraviroc (MVC, Selzentry) <br>
-					<input type="checkbox" name="a23" value="Dolutegravir"> Dolutegravir (DTG, Tivicay) <br>
-					<input type="checkbox" name="a24" value="Elvitegravir"> Elvitegravir (EVG, VITEKTA) <br>
+					<input type="checkbox" name="a23" value="Elvitegravir"> Elvitegravir (EVG, VITEKTA) <br>
+					<input type="checkbox" name="a24" value="Efavirenz"> Efavirenz (EFV, Sustiva) <br>
 					<input type="checkbox" name="a25" value="Raltegravir"> Raltegravir (RAL, Isentress) <br>
 					<input type="checkbox" name="a26" value="Cobicistat"> Cobicistat (COBI, TYBOST)<br>
 					<input type="checkbox" name="a27" value="Ritonavir"> Ritonavir (RTV, Norvir) <br>

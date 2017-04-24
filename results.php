@@ -100,13 +100,25 @@
 							echo $Regimen['Name'];
 							echo ('</legend>');
 							
-							if ($Regimen['Formulations']!= Null){
-								echo ('<br />');
-								echo '<b>Formulations</b>';
-								echo '<br >'; 
-								echo '<br >'; 
-								echo $Regimen['Formulations'];
-								}
+							if ($_SESSION['medtype'] == 'Formulations (Suspension)'){
+								if ($Regimen['Formulations (Suspension)']!= Null){
+									echo ('<br />');
+									echo '<b>Formulations (Suspension)</b>';
+									echo '<br >'; 
+									echo '<br >'; 
+									echo $Regimen['Formulations (Suspension)'];
+									}
+							}
+							
+							if ($_SESSION['medtype'] == 'Formulations (Tablet)' ){
+								if ($Regimen['Formulations (Tablet)']!= Null){
+									echo ('<br />');
+									echo '<b>Formulations (Tablet)</b>';
+									echo '<br >'; 
+									echo '<br >'; 
+									echo $Regimen['Formulations (Tablet)'];
+									}
+							}
 								
 							if ($Regimen['Fixed Dose Combination Tablets']!= Null){
 								echo '<br >'; 

@@ -105,10 +105,10 @@ function check() {
 			var ct2 = c7+c8+c9+c10+c11+c12+c13+c14;
 			
 			if (ct1 < 2){
-				if (ct2 == 0){
-					alert("Choose at least two NRTIs and one non-NRTI")
-					return false;
-				}
+				alert("Choose at least two NRTIs and one non-NRTI")
+				return false;
+			}
+			if (ct2 == 0){
 				alert("Choose at least two NRTIs and one non-NRTI")
 				return false;
 			}

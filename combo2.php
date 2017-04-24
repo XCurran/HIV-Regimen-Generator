@@ -86,9 +86,12 @@
 						for ($x = 0; $x <= $i; $x++){
 							for ($j = $x+1; $j <= $i; $j++){
 								$c =$c +1;
-								echo '<span><input type="checkbox" id="',$c,'" name="',$c,'"  value="',$n[$x],'_',$n[$j],'_',$m[$k],'" ><b>',$n[$x],' + ',$n[$j],' + ',$m[$k],'<b>';
-								echo '<br>';
-								echo '<br>';
+								
+								if ($arv[$_SESSION['medtype']] != Null){
+									echo '<span><input type="checkbox" id="',$c,'" name="',$c,'"  value="',$n[$x],'_',$n[$j],'_',$m[$k],'" ><b>',$n[$x],' + ',$n[$j],' + ',$m[$k],'<b>';
+									echo '<br>';
+									echo '<br>';
+								}
 								
 
 							}
