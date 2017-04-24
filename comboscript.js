@@ -7,7 +7,7 @@ function check() {
 			var v2=document.getElementById("Didanosine");
 			var v3=document.getElementById("Lamivudine");
 			var v4=document.getElementById("Stavudine");
-			var v5=document.getElementById("Tenofovir Disoproxil Fumarate");
+			var v5=document.getElementById("Disoproxil");
 			var v6=document.getElementById("Zidovudine");
 			
 			var v7=document.getElementById("Lopinavir");
