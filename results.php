@@ -27,7 +27,7 @@
 		<div id="header">
 			<ul id="headerul">
 				<!--listing all the options on the header-->
-				<li class="headerli"> <a href="index.html"> Home </a> </li>
+				<li class="headerli"> <a href="main.html"> Home </a> </li>
 				<li class="headerli"> <a href="about.html"> About  </a> </li>
 			</ul>
 		</div>
@@ -68,16 +68,21 @@
 		<h1> Patient's Selected Regimen: </h1>
 		<?php 
 
-		
-		$user = 'root';
-		$pass = '';
-		$pdo = new PDO('mysql:host=localhost;dbname=medications', $user, $pass);//PDO access database
-		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		try{
-			$result = $pdo->query('SELECT * FROM `medication_table`');
-		} catch (PDOException $e) {
-				echo $e->getMessage();
-		} 
+		$dbServerName = "localhost";
+		$dbUsername = "root";
+		$dbPassword = "Pa3Mg5Wj4U@I";
+		$dbName = "medications";
+		$conn = new mysqli($dbServerName, $dbUsername, $dbPassword, $dbName);
+		$result = $conn->query('SELECT * FROM `medication_table`');
+		// $user = 'root';
+		// $pass = '';
+		// $pdo = new PDO('mysql:host=localhost;dbname=medications', $user, $pass);//PDO access database
+		// $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		// try{
+		// 	$result = $pdo->query('SELECT * FROM `medication_table`');
+		// } catch (PDOException $e) {
+		// 		echo $e->getMessage();
+		// } 
 
 			?>		
 		
@@ -217,7 +222,7 @@
 		</a>
 		
 		<div id="return"> 
-			<a href="index.html"> Return to Home </a>
+			<a href="main.html"> Return to Home </a>
 		</div>
 	</body>
 
