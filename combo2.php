@@ -51,7 +51,7 @@
 
 					$dbServerName = "localhost";
 					$dbUsername = "root";
-					$dbPassword = "Pa3Mg5Wj4U@I";
+					$dbPassword = "";
 					$dbName = "medications";
 					$conn = new mysqli($dbServerName, $dbUsername, $dbPassword, $dbName);
 					$result = $conn->query('SELECT * FROM `medication_table`');

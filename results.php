@@ -87,9 +87,11 @@
 			
 			for ($c1 = 0; $c1 <= $_SESSION['c']; $c1++){
 				if (isset($_POST[$c1]) == true){
-					echo $_POST[$c1];
-	
 					$combo = explode("_", $_POST[$c1]);
+					echo '<br>';
+					echo '<br>';
+					echo '<b>',$combo[0],'   ',$combo[1],'    ',$combo[2],'<b>';
+	
 				
 					foreach ($result as $Regimen) {
 						
