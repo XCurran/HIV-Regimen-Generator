@@ -115,5 +115,44 @@ function check() {
 		}
 
 function check2(){
+	var c = 0;
+	var d=0;
+	do{
+		
+		if (document.getElementById(c).checked == true){
+			d = 1;
+			c = c +1;
+			return true;
+		}
+		
+		else{
+			c = c +1;
+		}
+	}
+	while(document.getElementById(c) != null);
+	
+	if (d==0){
+		alert("CHOOSE AT LEAST ONE OPTION")
+		return false;
+	}
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

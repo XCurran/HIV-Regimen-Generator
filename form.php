@@ -62,7 +62,6 @@
 				What kind of medications can the patient take: <br>
 				<input type="radio" name="medtype" value="Formulations (Suspension)" checked> Suspension only <br>
 				<input type="radio" name="medtype" value="Formulations (Tablet)"> Swallow Pills <br>
-				<input type="radio" name="medtype" value="crushed"> Crush pills and mix with food <br><br>
 				
 				Allergies: <br>
 				<span class= "allergies">
