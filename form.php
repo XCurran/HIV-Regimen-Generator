@@ -9,7 +9,7 @@
 		<meta name="description" content="HIV Regimen Generator form">
 		<meta name="keywords" content="HIV, AIDS, gov, government, schedule, regimen, generator">
 		<meta name="author" content="McMaster University Computer Science Capstone Team 14">
-		
+		<script type="text/javascript" src="comboscript.js"></script>
 		<!-- auto scales on phones -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 		
@@ -37,7 +37,7 @@
 		
 		<!--All necessary infromation is displayed here that is needed for the regimen. The client will give the inputs in here, which will then be taken to a Combination page. -->	
 		
-		<form action="combo.php" method="post">
+		<form onsubmit="return check3()" action="combo.php" method="post">
 			<fieldset>
 				<legend> Patient Information </legend>
 				<br>
@@ -60,8 +60,8 @@
 			    </select></span> <br><br>
 				
 				What kind of medications can the patient take: <br>
-				<input type="radio" name="medtype" value="Formulations (Suspension)" checked> Suspension only <br>
-				<input type="radio" name="medtype" value="Formulations (Tablet)"> Swallow Pills <br>
+				<input type="checkbox" id="medtypes" name="medtypes" value="Formulations (Suspension)"> Suspension only <br>
+				<input type="checkbox" id="medtypet" name="medtypet" value="Formulations (Tablet)"> Swallow Pills <br>
 				
 				Allergies: <br>
 				<span class= "allergies">

@@ -150,7 +150,19 @@ function check2(){
 	
 }
 
-
+function check3(){
+		var c = 0;
+		
+		if (document.getElementById("medtypes").checked == true || document.getElementById("medtypet").checked == true){
+			return true;
+		}
+		
+		else{
+			alert("CHOOSE BETWEEN SUSPENSION/TABLETS OR BOTH")
+			return false;
+		}
+		
+}
 
 
 
