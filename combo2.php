@@ -82,22 +82,27 @@
 						}
 					}
 					$c = -1;
-					for ($k = 0; $k <= $l; $k++){
-						for ($x = 0; $x <= $i; $x++){
-							for ($j = $x+1; $j <= $i; $j++){
+					for ($x = 0; $x <= $i; $x++){
+						for ($j = $x+1; $j <= $i; $j++){
+							echo '<font color="brown" size="3">';
+							echo '<b>';
+							echo $n[$x];
+							echo '+';
+							echo $n[$j];
+							echo '</font></b>';
+							echo '<br>';
+							echo '<br>';
+							for ($k = 0; $k <= $l; $k++){
 								$c =$c +1;
-									echo '<span><input type="checkbox" id="',$c,'" name="',$c,'"  value="',$n[$x],'_',$n[$j],'_',$m[$k],'" ><b>',$n[$x],' + ',$n[$j],' + ',$m[$k],'<b>';
+									echo '<span><input type="checkbox" id="',$c,'" name="',$c,'"  value="',$n[$x],'_',$n[$j],'_',$m[$k],'" ><b>',$m[$k],'<b>';
 									echo '<br>';
 									echo '<br>';
-								
 								
 
 							}
+							echo '<br>';
+							echo '<br>';
 						}
-						echo '<br>';
-						echo '<br>';
-						echo '<br>';
-						echo '<br>';
 					}
 					
 					
