@@ -164,6 +164,26 @@ function check3(){
 		
 }
 
+function check4(){
+	
+	var c = 0;
+	
+	do{
+		
+		if (document.getElementById(c).checked == false){
+			document.getElementById(c).checked = true;
+			c = c +1;
+			
+		}
+		
+		else{
+			c=c+1;
+		}
+	}
+	while(document.getElementById(c) != null);
+		
+}
+
 
 
 

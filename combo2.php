@@ -42,6 +42,7 @@
 				<legend> ALL COMBINATIONS </legend>
 				<div id="combo">
 				
+				<input type="radio" onclick="return check4()"> SELECT ALL <br> <br> <br>
 				<?php
 					session_start();
 					$i = -1;
