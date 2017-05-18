@@ -100,17 +100,19 @@
 							echo $Regimen['Name'];
 							echo ('</legend>');
 							
-							if ($_SESSION['medtype'] == 'Formulations (Suspension)'){
+							if ($_SESSION['medtypes'] == 'Formulations (Suspension)'){
 								if ($Regimen['Formulations (Suspension)']!= Null){
 									echo ('<br />');
 									echo '<b>Formulations (Suspension)</b>';
 									echo '<br >'; 
 									echo '<br >'; 
 									echo $Regimen['Formulations (Suspension)'];
+									echo '<br >'; 
+									echo '<br >'; 
 									}
 							}
 							
-							if ($_SESSION['medtype'] == 'Formulations (Tablet)' ){
+							if ($_SESSION['medtypet'] == 'Formulations (Tablet)' ){
 								if ($Regimen['Formulations (Tablet)']!= Null){
 									echo ('<br />');
 									echo '<b>Formulations (Tablet)</b>';
