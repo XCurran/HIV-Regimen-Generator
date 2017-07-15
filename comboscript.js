@@ -3,125 +3,32 @@
 // combo page does not advance to the results page.
 
 function check() {
-			var v1=document.getElementById("Abacavir");
-			var v2=document.getElementById("Didanosine");
-			var v3=document.getElementById("Lamivudine");
-			var v4=document.getElementById("Stavudine");
-			var v5=document.getElementById("Disoproxil");
-			var v6=document.getElementById("Zidovudine");
+			var ct1= 0;
+			var ct2 =0;
 			
-			var v7=document.getElementById("Lopinavir");
-			var v8=document.getElementById("Nevirapine");
-			var v9=document.getElementById("Raltegravir");
-			var v10=document.getElementById("Atazanavir");
-			var v11=document.getElementById("Efavirenz");
-			var v12=document.getElementById("Darunavir");
-			var v13=document.getElementById("Dolutegravir");
-			var v14=document.getElementById("Elvitegravir");
-		
-			
-			
-			var c1 = 0;
-			var c2 = 0;
-			var c3 = 0;
-			var c4 = 0;
-			var c5 = 0;
-			var c6 = 0;
-			
-			var c7 = 0;
-			var c8 = 0;
-			var c9 = 0;
-			var c10 = 0;
-			var c11 = 0;
-			var c12 = 0;
-			var c13 = 0;
-			var c14 = 0;
-			
-			var ct1 = 0;
-			var ct2 = 0;
-			
-			if (v1 != null){
-				if (v1.checked == true){
-					var c1 = 1;
-				}
+			for (c = 1; c < 30; c++) { 
+				var s = "a"+c;
+				if (document.getElementById(s) != null){
+					if (c == 1 || c == 2 || c == 3 || c == 4 || c == 5 || c == 7 || c == 8){
+						if (document.getElementById(s).checked == true){
+							ct1 = ct1 + 1;
+						}
+					}
+					else{
+						if (document.getElementById(s).checked == true){
+							ct2 = ct2 + 1;
+						}
+					}
+				}	
 			}
-			if (v2 != null){
-				if (v2.checked == true){
-					var c2 = 1;
-				}
-			}
-			if (v3 != null){
-				if (v3.checked == true){
-					var c3 = 1;
-				}
-			}
-			if (v4 != null){
-				if (v4.checked == true){
-					var c4 = 1;
-				}
-			}
-			if (v5 != null){
-				if (v5.checked == true){
-					var c5 = 1;
-				}
-			}
-			if (v6 != null){
-				if (v6.checked == true){
-					var c6 = 1;
-				}
-			}
-			if (v7 != null){
-				if (v7.checked == true){
-					var c7 = 1;
-				}
-			}
-			if (v8 != null){
-				if (v8.checked == true){
-					var c8 = 1;
-				}
-			}
-			if (v9 != null){
-				if (v9.checked == true){
-					var c9 = 1;
-				}
-			}
-			if (v10 != null){
-				if (v10.checked == true){
-					var c10 = 1;
-				}
-			}
-			if (v11 != null){
-				if (v11.checked == true){
-					var c11 = 1;
-				}
-			}
-			if (v12 != null){
-				if (v12.checked == true){
-					var c12 = 1;
-				}
-			}
-			if (v13 != null){
-				if (v13.checked == true){
-					var c13 = 1;
-				}
-			}
-			if (v14 != null){
-				if (v14.checked == true){
-					var c14 = 1;
-				}
-			}
-			
-			
-			var ct1 = c1+c2+c3+c4+c5+c6;
-			
-			var ct2 = c7+c8+c9+c10+c11+c12+c13+c14;
 			
 			if (ct1 < 2){
-				alert("Choose at least two NRTIs and one non-NRTI")
+				alert("CHOOSE AT LEAST TWO NRTIs");
 				return false;
 			}
+			
 			if (ct2 == 0){
-				alert("Choose at least two NRTIs and one non-NRTI")
+				alert("CHOOSE AT LEAST ONE OTHER ARV");
 				return false;
 			}
 		}
@@ -163,8 +70,18 @@ function check3(){
 		}
 		
 }
+function select1(){
+	
+	for (c = 0; c < 30; c++) { 
+		var s = "a"+c;
+		if (document.getElementById(s) != null){
+			document.getElementById(s).checked = true;
+		}
+	}
+	
+}
 
-function check4(){
+function select2(){
 	
 	var c = 0;
 	

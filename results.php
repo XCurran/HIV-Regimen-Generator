@@ -79,7 +79,8 @@
 		<!--SQL file is used here to grab information related to the regimen. If statements are used since some ARVs have Null boxes.-->
 	
 		<?php
-			
+			$_SESSION['BSA'] = $_SESSION['height'] * $_SESSION['weight'] / 3600;
+
 			for ($c1 = 0; $c1 <= $_SESSION['c']; $c1++){
 				if (isset($_POST[$c1]) == true){
 					$combo = explode("_", $_POST[$c1]);
@@ -163,8 +164,33 @@
 								echo '<b>Infant (3 months to 8 months)</b>';
 								echo '<br >'; 
 								echo '<br >'; 
-								echo $Regimen['Infant (3 months to 8 months)'];
+								$e1=explode("mg/kg", $Regimen['Infant (3 months to 8 months)']);
+								$s1=sizeof($e1);
+								$res="";
+								$res2="";
+								 for ($n = 0; $n < $s1; $n++) {
+									if (is_numeric(substr($e1[$n],0,strlen($e1[$n])-1))){
+										$res = $res . ($e1[$n] * $_SESSION["weight"]);
+										$res = $res . " mg ";
+									}
+									else{
+										$res = $res . $e1[$n];
+									}
 								}
+								$e2=explode("mg/m^2", $res);
+								$s2=sizeof($e2);
+								 for ($n = 0; $n < $s2; $n++) {
+									if (is_numeric(substr($e2[$n],0,strlen($e2[$n])-1))){
+										$res2 = $res2 . ($e2[$n] * $_SESSION["BSA"]);
+										$res2 = $res2 . " mg ";
+									}
+									else{
+										$res2 = $res2 . $e2[$n];
+									}
+								}
+								echo $res2;
+								
+							}
 								
 							if ( ($_SESSION['years'] == 0 and $_SESSION['months'] >= 8)	or ($_SESSION['years'] < 6 and $_SESSION['years'] > 0)){
 								echo '<br >'; 
@@ -175,7 +201,22 @@
 								echo '<br >'; 
 								echo '<br >'; 
 								echo $Regimen['Pediatric (8 months to 6 years old)'];
+								echo '<br >'; 
+								echo '<br >'; 
+								$e1=explode("mg/kg", $Regimen['Pediatric (8 months to 6 years old)']);
+								$s1=sizeof($e1);
+								
+								for ($n = 1; $n < $s1; $n++) {
+									if (isset($e1[$n]) == true){
+										echo $e1[$n-1] * $_SESSION["weight"];
+										echo " mg ";
+										echo $e1[$n];
+									}
+									else {
+										echo $e1[$n];
+									}
 								}
+							}
 								
 							if ($_SESSION['years'] >= 6 and $_SESSION['years'] < 18){
 								echo '<br >'; 

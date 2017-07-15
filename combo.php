@@ -26,7 +26,9 @@
 		</div>
 		<p id="disclaimer"> *Disclaimer* None of the following information you provide will be stored. All details inputted will be removed immediately after you close the browser. </p>
 		<!-- The combo page uses a check() Javascript function to see that the client has not accidentally chosen the same NRTI twice. This page then takes the user to the results page. -->
+		
 		<form onsubmit="return check()" action="combo2.php" method="post">
+		
 		<!--Session variables and used with a session so that the form variables and taken to the results page and can be displayed there. -->
 		<?php
 		session_start();
@@ -65,7 +67,9 @@
 			}
 ?>
 			<fieldset>
+			
 				<legend> Possible Regimen Selections </legend>
+				<br> <input type="radio" onclick="return select1()"> SELECT ALL <br>
 				<div id="combo">
 				<!--The following code uses an SQL table and grabs the necessary information related to the medication that users can combine. The NRTIs are selected by type,
 				while the other medications are checked by name since they are not used for only one combination. Alternative regiments follow different guidelines so they
@@ -104,13 +108,13 @@
 						echo'<br>';
 						foreach ($result as $arv) {
 							if ($arv['Type'] == ('NRTI' || 'NRTI (rare)') ){
-								if ($arv['CName'] === $_SESSION['a1'] or $arv['CName'] === $_SESSION['a2'] or $arv['CName'] === $_SESSION['a4'] or $arv['CName'] === $_SESSION['a5'] or $arv['CName'] === $_SESSION['a7'] or $arv['CName'] === $_SESSION['a8']){
+								if ($arv['CName'] === $_SESSION['a1'] or $arv['CName'] === $_SESSION['a2'] or $arv['CName'] === $_SESSION['a3'] or $arv['CName'] === $_SESSION['a4'] or $arv['CName'] === $_SESSION['a5'] or $arv['CName'] === $_SESSION['a7'] or $arv['CName'] === $_SESSION['a8']){
 									if ($arv['CName'] === $_SESSION['a1'] and $_SESSION['HLA-status'] === 'positive'){
 										echo ' ';
 									}
 									else{
 										if ($arv[$_SESSION['medtypes']] != Null or $arv[$_SESSION['medtypet']] != Null){
-											echo '<span><input type="checkbox" id="',$arv['SName'],'" name="',$arv['SName'],'" value="',$arv['SName'],'" >',$arv['Name'],'';
+											echo '<span><input type="checkbox" id="',$arv['CName'],'" name="',$arv['SName'],'" value="',$arv['SName'],'" >',$arv['Name'],'';
 											echo'<br>';
 											echo'<br>';
 										}
@@ -126,7 +130,7 @@
 										echo'<br>';
 										echo'<br>';
 											if ($arv['SName'] == ('Lopinavir')){
-													echo '<span><input type="checkbox" id="',$arv['SName'],'" name="',$arv['SName'],'" value="',$arv['SName'],'" >',$arv['Name'],'';
+													echo '<span><input type="checkbox" id="',$arv['CName'],'" name="',$arv['SName'],'" value="',$arv['SName'],'" >',$arv['Name'],'';
 													echo'<br>';
 													echo'<br>';
 												}
@@ -141,7 +145,7 @@
 												echo'<b>ALTERNATIVE REGIMEN</b>';
 												echo'<br>';
 												echo'<br>';
-												echo '<span><input type="checkbox" id="',$arv['SName'],'" name="',$arv['SName'],'"  value="',$arv['SName'],'" >',$arv['Name'],'';
+												echo '<span><input type="checkbox" id="',$arv['CName'],'" name="',$arv['SName'],'"  value="',$arv['SName'],'" >',$arv['Name'],'';
 												echo'<br>';
 												echo'<br>';
 											}
@@ -155,7 +159,7 @@
 											echo'<b>ALTERNATIVE REGIMEN</b>';
 											echo'<br>';
 											echo'<br>';
-											echo '<span><input type="checkbox" id="',$arv['SName'],'" name="',$arv['SName'],'" value="',$arv['SName'],'" >',$arv['Name'],'';
+											echo '<span><input type="checkbox" id="',$arv['CName'],'" name="',$arv['SName'],'" value="',$arv['SName'],'" >',$arv['Name'],'';
 											echo'<br>';
 											echo'<br>';
 										}
@@ -169,7 +173,7 @@
 											echo'<b>ALTERNATIVE REGIMEN</b>';
 											echo'<br>';
 											echo'<br>';
-											echo '<span><input type="checkbox" id="',$arv['SName'],'" name="',$arv['SName'],'" value="',$arv['SName'],'" >',$arv['Name'],'';
+											echo '<span><input type="checkbox" id="',$arv['CName'],'" name="',$arv['SName'],'" value="',$arv['SName'],'" >',$arv['Name'],'';
 											echo'<br>';
 											echo'<br>';
 										}
@@ -184,14 +188,14 @@
 								foreach ($result3 as $arv) {
 									if ($arv['CName'] == $_SESSION['a17']){
 										if ($arv[$_SESSION['medtypes']] != Null or $arv[$_SESSION['medtypet']] != Null){
-										echo '<span><input type="checkbox" id="',$arv['SName'],'" name="',$arv['SName'],'" value="',$arv['SName'],'" >',$arv['Name'],'';
+										echo '<span><input type="checkbox" id="',$arv['CName'],'" name="',$arv['SName'],'" value="',$arv['SName'],'" >',$arv['Name'],'';
 										echo'<br>';
 										echo'<br>';
 										}
 									}
 									else if ($arv['CName'] == $_SESSION['a25']){
 										if ($arv[$_SESSION['medtypes']] != Null or $arv[$_SESSION['medtypet']] != Null){
-											echo '<span><input type="checkbox" id="',$arv['SName'],'" name="',$arv['SName'],'" value="',$arv['SName'],'" >',$arv['Name'],'';
+											echo '<span><input type="checkbox" id="',$arv['CName'],'" name="',$arv['SName'],'" value="',$arv['SName'],'" >',$arv['Name'],'';
 											echo'<br>';
 											echo'<br>';
 										}
@@ -205,7 +209,7 @@
 												echo'<b>ALTERNATIVE REGIMEN</b>';
 												echo'<br>';
 												echo'<br>';
-												echo '<span><input type="checkbox" id="',$arv['SName'],'" name="',$arv['SName'],'" value="',$arv['SName'],'" >',$arv['Name'],'';
+												echo '<span><input type="checkbox" id="',$arv['CName'],'" name="',$arv['SName'],'" value="',$arv['SName'],'" >',$arv['Name'],'';
 												echo'<br>';
 												echo'<br>';
 											}
@@ -219,7 +223,7 @@
 												echo'<b>ALTERNATIVE REGIMEN</b>';
 												echo'<br>';
 												echo'<br>';
-												echo '<span><input type="checkbox" id="',$arv['SName'],'" name="',$arv['SName'],'" value="',$arv['SName'],'" >',$arv['Name'],'';
+												echo '<span><input type="checkbox" id="',$arv['CName'],'" name="',$arv['SName'],'" value="',$arv['SName'],'" >',$arv['Name'],'';
 												echo'<br>';
 												echo'<br>';
 											}
@@ -234,35 +238,35 @@
 								foreach ($result3 as $arv) {
 									if ($arv['CName'] == $_SESSION['a17']){
 										if ($arv[$_SESSION['medtypes']] != Null or $arv[$_SESSION['medtypet']] != Null){
-											echo '<span><input type="checkbox" id="',$arv['SName'],'" name="',$arv['SName'],'" value="',$arv['SName'],'" >',$arv['Name'],'';
+											echo '<span><input type="checkbox" id="',$arv['CName'],'" name="',$arv['SName'],'" value="',$arv['SName'],'" >',$arv['Name'],'';
 											echo'<br>';
 											echo'<br>';
 										}
 									}
 									else if ($arv['CName'] == $_SESSION['a25']){
 										if ($arv[$_SESSION['medtypes']] != Null or $arv[$_SESSION['medtypet']] != Null){
-											echo '<span><input type="checkbox" id="',$arv['SName'],'" name="',$arv['SName'],'" value="',$arv['SName'],'" >',$arv['Name'],'';
+											echo '<span><input type="checkbox" id="',$arv['CName'],'" name="',$arv['SName'],'" value="',$arv['SName'],'" >',$arv['Name'],'';
 											echo'<br>';
 											echo'<br>';
 										}
 									}
 									else if ($arv['CName'] == $_SESSION['a24']){
 										if ($arv[$_SESSION['medtypes']] != Null or $arv[$_SESSION['medtypet']] != Null){
-											echo '<span><input type="checkbox" id="',$arv['SName'],'" name="',$arv['SName'],'" value="',$arv['SName'],'" >',$arv['Name'],'';
+											echo '<span><input type="checkbox" id="',$arv['CName'],'" name="',$arv['SName'],'" value="',$arv['SName'],'" >',$arv['Name'],'';
 											echo'<br>';
 											echo'<br>';
 										}
 									}
 									else if ($arv['CName'] == $_SESSION['a13']){
 										if ($arv[$_SESSION['medtypes']] != Null or $arv[$_SESSION['medtypet']] != Null){
-											echo '<span><input type="checkbox" id="',$arv['SName'],'" name="',$arv['SName'],'" value="',$arv['SName'],'" >',$arv['Name'],'';
+											echo '<span><input type="checkbox" id="',$arv['CName'],'" name="',$arv['SName'],'" value="',$arv['SName'],'" >',$arv['Name'],'';
 											echo'<br>';
 											echo'<br>';
 										}
 									}
 									else if ($arv['CName'] == $_SESSION['a14']){
 										if ($arv[$_SESSION['medtypes']] != Null or $arv[$_SESSION['medtypet']] != Null){
-											echo '<span><input type="checkbox" id="',$arv['SName'],'" name="',$arv['SName'],'" value="',$arv['SName'],'" >',$arv['Name'],'(twice daily)';
+											echo '<span><input type="checkbox" id="',$arv['CName'],'" name="',$arv['SName'],'" value="',$arv['SName'],'" >',$arv['Name'],'(twice daily)';
 											echo'<br>';
 											echo'<br>';
 										}
@@ -277,28 +281,28 @@
 								foreach ($result3 as $arv) {
 									if ($arv['CName'] == $_SESSION['a13']){
 										if ($arv[$_SESSION['medtypes']] != Null or $arv[$_SESSION['medtypet']] != Null){
-											echo '<span><input type="checkbox" id="',$arv['SName'],'" name="',$arv['SName'],'" value="',$arv['SName'],'" >',$arv['Name'],'';
+											echo '<span><input type="checkbox" id="',$arv['CName'],'" name="',$arv['SName'],'" value="',$arv['SName'],'" >',$arv['Name'],'';
 											echo'<br>';
 											echo'<br>';
 										}
 									}
 									else if ($arv['CName'] == $_SESSION['a9']){
 										if ($arv[$_SESSION['medtypes']] != Null or $arv[$_SESSION['medtypet']] != Null){
-											echo '<span><input type="checkbox" id="',$arv['SName'],'" name="',$arv['SName'],'" value="',$arv['SName'],'" >',$arv['Name'],'';
+											echo '<span><input type="checkbox" id="',$arv['CName'],'" name="',$arv['SName'],'" value="',$arv['SName'],'" >',$arv['Name'],'';
 											echo'<br>';
 											echo'<br>';
 										}
 									}
 									else if ($arv['CName'] == $_SESSION['a14']){
 										if ($arv[$_SESSION['medtypes']] != Null or $arv[$_SESSION['medtypet']] != Null){
-											echo '<span><input type="checkbox" id="',$arv['SName'],'" name="',$arv['SName'],'" value="',$arv['SName'],'" >',$arv['Name'],'(once daily)';
+											echo '<span><input type="checkbox" id="',$arv['CName'],'" name="',$arv['SName'],'" value="',$arv['SName'],'" >',$arv['Name'],'(once daily)';
 											echo'<br>';
 											echo'<br>';
 										}
 									}
 									else if ($arv['CName'] == $_SESSION['a23']){
 										if ($arv[$_SESSION['medtypes']] != Null or $arv[$_SESSION['medtypet']] != Null){
-											echo '<span><input type="checkbox" id="',$arv['SName'],'" name="',$arv['SName'],'" value="',$arv['SName'],'" >',$arv['Name'],'';
+											echo '<span><input type="checkbox" id="',$arv['CName'],'" name="',$arv['SName'],'" value="',$arv['SName'],'" >',$arv['Name'],'';
 											echo'<br>';
 											echo'<br>';
 										}
@@ -308,7 +312,7 @@
 											echo '<b>ALTERNATIVE REGIMEN</b>';
 											echo '<br>';
 											echo '<br>';
-											echo '<span><input type="checkbox" id="',$arv['SName'],'" name="',$arv['SName'],'" value="',$arv['SName'],'" >',$arv['Name'],'';
+											echo '<span><input type="checkbox" id="',$arv['CName'],'" name="',$arv['SName'],'" value="',$arv['SName'],'" >',$arv['Name'],'';
 											echo'<br>';
 											echo'<br>';
 										}
@@ -318,7 +322,7 @@
 											echo '<b>ALTERNATIVE REGIMEN</b>';
 											echo '<br>';
 											echo '<br>';
-											echo '<span><input type="checkbox" id="',$arv['SName'],'" name="',$arv['SName'],'" value="',$arv['SName'],'" >',$arv['Name'],'';
+											echo '<span><input type="checkbox" id="',$arv['CName'],'" name="',$arv['SName'],'" value="',$arv['SName'],'" >',$arv['Name'],'';
 											echo'<br>';
 											echo'<br>';
 										}
@@ -328,7 +332,7 @@
 											echo '<b>ALTERNATIVE REGIMEN</b>';
 											echo '<br>';
 											echo '<br>';
-											echo '<span><input type="checkbox" id="',$arv['SName'],'" name="',$arv['SName'],'" value="',$arv['SName'],'" >',$arv['Name'],'';
+											echo '<span><input type="checkbox" id="',$arv['CName'],'" name="',$arv['SName'],'" value="',$arv['SName'],'" >',$arv['Name'],'';
 											echo'<br>';
 											echo'<br>';
 										}
